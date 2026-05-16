@@ -31,7 +31,7 @@ class handler(BaseHTTPRequestHandler):
             "Subscription-Userinfo",
             f"upload=0; download=0; total=107374182400; expire={expire_timestamp}"
         )
-        self.send_header("Support-URL", "https://t.me/ArbizzVPNbot")
+        self.send_header("Support-URL", "https://t.me/Spprt05Arbz")
         self.end_headers()
         self.wfile.write(encoded.encode())
         return
