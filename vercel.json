@@ -1,16 +1,11 @@
 {
   "rewrites": [
-    { "source": "/sub/:path*", "destination": "/api/sub" }
-  ],
-  "headers": [
-    {
-      "source": "/api/sub",
-      "headers": [
-        {
-          "key": "Access-Control-Allow-Origin",
-          "value": "*"
-        }
-      ]
-    }
+    { "source": "/sub/:path*", "destination": "/api/sub" },
+    { "source": "/", "destination": "/api/index" },
+    { "source": "/about", "destination": "/api/about" },
+    { "source": "/terms", "destination": "/api/terms" },
+    { "source": "/refund", "destination": "/api/refund" },
+    { "source": "/privacy", "destination": "/api/privacy" },
+    { "source": "/contacts", "destination": "/api/contacts" }
   ]
 }
