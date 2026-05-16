@@ -1,5 +1,16 @@
 {
   "rewrites": [
     { "source": "/sub/:path*", "destination": "/api/sub" }
+  ],
+  "headers": [
+    {
+      "source": "/api/sub",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
+      ]
+    }
   ]
 }
