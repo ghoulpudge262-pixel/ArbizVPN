@@ -9,7 +9,7 @@ VLESS_LINKS = [
 ]
 
 # ===== НАЗВАНИЕ ПОДПИСКИ В ПРИЛОЖЕНИИ =====
-PROFILE_TITLE = "🎉 Happy VPN — Премиум"
+PROFILE_TITLE = "💎 ArbizzVPN Premium"
 
 # Срок действия (в днях)
 EXPIRE_DAYS = 30
