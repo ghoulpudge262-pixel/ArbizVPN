@@ -442,32 +442,18 @@ a:hover { color: #a0b8ff; }
 }
 .contact-form .btn { width: 100%; }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
-    .hero h1 { font-size: 2rem; }
-    .hero-stats { flex-direction: column; gap: 20px; }
-    .features-grid,
-    .pricing-grid,
-    .contacts-grid { grid-template-columns: 1fr; }
-    .footer-grid { grid-template-columns: 1fr; gap: 30px; }
-    .price-card.popular { transform: none; }
-    .price-card.popular:hover { transform: translateY(-4px); }
-    .nav { display: none; }
-}
-/* ===== ABOUT PAGE ===== */
+/* ABOUT PAGE */
 .about-hero {
     padding: 80px 0 60px;
     text-align: center;
     background: radial-gradient(ellipse at center top, rgba(74, 108, 247, 0.15), transparent 60%);
 }
-
 .about-hero h1 {
     font-size: 2.8rem;
     font-weight: 800;
     color: #ffffff;
     margin-bottom: 20px;
 }
-
 .about-lead {
     font-size: 1.15rem;
     color: #8890a8;
@@ -475,40 +461,31 @@ a:hover { color: #a0b8ff; }
     margin: 0 auto;
     line-height: 1.7;
 }
-
-.about-section {
-    padding: 70px 0;
-}
-
+.about-section { padding: 70px 0; }
 .about-section.alt-bg {
     background: rgba(255, 255, 255, 0.01);
 }
-
 .about-grid {
     display: grid;
     grid-template-columns: 1fr 0.6fr;
     gap: 60px;
     align-items: center;
 }
-
 .about-grid.reverse {
     grid-template-columns: 0.6fr 1fr;
 }
-
 .about-text h2 {
     font-size: 2rem;
     font-weight: 800;
     color: #ffffff;
     margin-bottom: 20px;
 }
-
 .about-text p {
     color: #a0a8c0;
     font-size: 1rem;
     line-height: 1.8;
     margin-bottom: 16px;
 }
-
 .about-visual {
     font-size: 8rem;
     text-align: center;
@@ -524,7 +501,6 @@ a:hover { color: #a0b8ff; }
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
 }
-
 .step-card {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(108, 143, 255, 0.1);
@@ -533,12 +509,10 @@ a:hover { color: #a0b8ff; }
     text-align: center;
     transition: all 0.3s;
 }
-
 .step-card:hover {
     border-color: rgba(108, 143, 255, 0.3);
     transform: translateY(-4px);
 }
-
 .step-num {
     width: 50px;
     height: 50px;
@@ -552,13 +526,11 @@ a:hover { color: #a0b8ff; }
     font-size: 1.4rem;
     font-weight: 800;
 }
-
 .step-card h3 {
     color: #ffffff;
     font-size: 1.1rem;
     margin-bottom: 10px;
 }
-
 .step-card p {
     color: #8890a8;
     font-size: 0.88rem;
@@ -571,7 +543,6 @@ a:hover { color: #a0b8ff; }
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
 }
-
 .stat-box {
     text-align: center;
     padding: 32px 20px;
@@ -579,14 +550,12 @@ a:hover { color: #a0b8ff; }
     border: 1px solid rgba(108, 143, 255, 0.1);
     border-radius: 16px;
 }
-
 .stat-big {
     font-size: 2.4rem;
     font-weight: 800;
     color: #6c8fff;
     margin-bottom: 8px;
 }
-
 .stat-label-big {
     color: #a0a8c0;
     font-size: 0.9rem;
@@ -597,7 +566,6 @@ a:hover { color: #a0b8ff; }
     list-style: none;
     margin-top: 20px;
 }
-
 .tech-list li {
     padding: 12px 0 12px 28px;
     color: #a0a8c0;
@@ -605,7 +573,6 @@ a:hover { color: #a0b8ff; }
     position: relative;
     font-size: 0.94rem;
 }
-
 .tech-list li::before {
     content: "✓";
     position: absolute;
@@ -613,16 +580,12 @@ a:hover { color: #a0b8ff; }
     color: #6c8fff;
     font-weight: 700;
 }
-
 .tech-list li strong {
     color: #ffffff;
 }
 
 /* CTA */
-.cta-section {
-    padding: 80px 0;
-}
-
+.cta-section { padding: 80px 0; }
 .cta-box {
     background: linear-gradient(135deg, rgba(74, 108, 247, 0.15), rgba(108, 143, 255, 0.08));
     border: 1px solid rgba(108, 143, 255, 0.25);
@@ -630,22 +593,29 @@ a:hover { color: #a0b8ff; }
     padding: 60px 40px;
     text-align: center;
 }
-
 .cta-box h2 {
     color: #ffffff;
     font-size: 2rem;
     font-weight: 800;
     margin-bottom: 12px;
 }
-
 .cta-box p {
     color: #a0a8c0;
     font-size: 1.05rem;
     margin-bottom: 28px;
 }
 
-/* RESPONSIVE FOR ABOUT */
+/* RESPONSIVE */
 @media (max-width: 768px) {
+    .hero h1 { font-size: 2rem; }
+    .hero-stats { flex-direction: column; gap: 20px; }
+    .features-grid,
+    .pricing-grid,
+    .contacts-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+    .price-card.popular { transform: none; }
+    .price-card.popular:hover { transform: translateY(-4px); }
+    .nav { display: none; }
     .about-hero h1 { font-size: 1.8rem; }
     .about-grid,
     .about-grid.reverse {
