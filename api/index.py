@@ -1,225 +1,236 @@
-from http.server import BaseHTTPRequestHandler
-
-
-class handler(BaseHTTPRequestHandler):
-    def do_GET(self):
-        html = """<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ArbizzVPN — Безопасный доступ в интернет</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: #0f172a;
-            color: white;
-            line-height: 1.6;
-        }
-        nav {
-            background: #1e293b;
-            padding: 20px 40px;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        nav .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-        nav .logo { font-size: 24px; font-weight: bold; }
-        nav .menu { display: flex; gap: 25px; flex-wrap: wrap; }
-        nav .menu a {
-            color: white;
-            text-decoration: none;
-            opacity: 0.8;
-            transition: opacity 0.2s;
-        }
-        nav .menu a:hover { opacity: 1; }
-        .hero {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            padding: 100px 20px;
-            text-align: center;
-        }
-        h1 { font-size: 56px; margin-bottom: 20px; }
-        .subtitle { font-size: 22px; opacity: 0.95; margin-bottom: 40px; }
-        .btn {
-            display: inline-block;
-            background: white;
-            color: #667eea;
-            padding: 18px 50px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 18px;
-            transition: transform 0.2s;
-        }
-        .btn:hover { transform: scale(1.05); }
-        .container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
-        .section-title { font-size: 36px; text-align: center; margin-bottom: 50px; }
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-        .feature {
-            background: #1e293b;
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-        }
-        .feature-icon { font-size: 48px; margin-bottom: 15px; }
-        .feature h3 { font-size: 22px; margin-bottom: 10px; }
-        .feature p { opacity: 0.8; }
-        .pricing {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin-top: 40px;
-        }
-        .price-card {
-            background: #1e293b;
-            padding: 35px 25px;
-            border-radius: 15px;
-            text-align: center;
-            border: 2px solid transparent;
-            transition: transform 0.2s;
-        }
-        .price-card:hover { transform: translateY(-5px); }
-        .price-card.popular {
-            border-color: #667eea;
-            transform: scale(1.05);
-        }
-        .price-card h3 { font-size: 24px; margin-bottom: 15px; }
-        .price { font-size: 48px; font-weight: bold; color: #667eea; margin: 15px 0; }
-        .price small { font-size: 18px; opacity: 0.7; }
-        .period { opacity: 0.8; margin-bottom: 20px; }
-        footer {
-            background: #1e293b;
-            padding: 40px 20px;
-            text-align: center;
-            margin-top: 60px;
-        }
-        footer .links {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-        }
-        footer a {
-            color: #667eea;
-            text-decoration: none;
-        }
-        footer .copyright { opacity: 0.6; margin-top: 15px; }
-    </style>
+    <title>SafeNet VPN — Безопасный доступ в интернет</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav>
-        <div class="container">
-            <div class="logo">🎉 ArbizzVPN</div>
-            <div class="menu">
-                <a href="/">Главная</a>
-                <a href="/about">О сервисе</a>
-                <a href="/terms">Соглашение</a>
-                <a href="/refund">Возврат</a>
-                <a href="/privacy">Конфиденциальность</a>
-                <a href="/contacts">Контакты</a>
-            </div>
-        </div>
-    </nav>
 
-    <section class="hero">
-        <h1>🎉 ArbizzVPN</h1>
-        <p class="subtitle">Безопасный и быстрый доступ в интернет<br>через защищённые VPN-серверы в Европе</p>
-        <a href="https://t.me/ArbizzVPNbot" class="btn">📱 Купить подписку</a>
-    </section>
+<!-- HEADER -->
+<header class="header">
+    <div class="container header-inner">
+        <a href="index.html" class="logo">
+            <span class="logo-icon">🛡️</span> SafeNet VPN
+        </a>
+        <nav class="nav">
+            <a href="#features">Возможности</a>
+            <a href="#pricing">Тарифы</a>
+            <a href="contacts.html">Контакты</a>
+        </nav>
+        <a href="#pricing" class="btn btn-sm">Подключить</a>
+    </div>
+</header>
 
-    <div class="container">
-        <h2 class="section-title">🌟 Возможности сервиса</h2>
-        <div class="features">
-            <div class="feature">
-                <div class="feature-icon">🌍</div>
-                <h3>8 стран Европы</h3>
-                <p>Германия, Нидерланды, Швейцария, Швеция, Финляндия, Эстония, Латвия и другие</p>
+<!-- HERO -->
+<section class="hero">
+    <div class="container hero-content">
+        <h1>Безопасный и быстрый<br>VPN-сервис</h1>
+        <p class="hero-sub">Защитите свои данные в интернете. Шифрование военного уровня, высокая скорость соединения и полная анонимность.</p>
+        <a href="#pricing" class="btn btn-lg">Выбрать тариф</a>
+        <div class="hero-stats">
+            <div class="stat">
+                <span class="stat-num">50+</span>
+                <span class="stat-label">Локаций</span>
             </div>
-            <div class="feature">
-                <div class="feature-icon">⚡️</div>
-                <h3>Высокая скорость</h3>
-                <p>До 1 Гбит/с на каждом сервере. Подходит для видеоконференций и стриминга</p>
+            <div class="stat">
+                <span class="stat-num">99.9%</span>
+                <span class="stat-label">Uptime</span>
             </div>
-            <div class="feature">
-                <div class="feature-icon">🔒</div>
-                <h3>Защита данных</h3>
-                <p>Современный протокол VLESS обеспечивает безопасность ваших данных</p>
-            </div>
-            <div class="feature">
-                <div class="feature-icon">📱</div>
-                <h3>Все устройства</h3>
-                <p>iPhone, Android, Windows, macOS — одна подписка для всех ваших устройств</p>
-            </div>
-            <div class="feature">
-                <div class="feature-icon">📊</div>
-                <h3>100 ГБ трафика</h3>
-                <p>Достаточно для активного использования весь месяц</p>
-            </div>
-            <div class="feature">
-                <div class="feature-icon">💬</div>
-                <h3>Поддержка 24/7</h3>
-                <p>Быстрая помощь в Telegram-чате с любыми вопросами</p>
-            </div>
-        </div>
-
-        <h2 class="section-title" style="margin-top: 80px;">💎 Тарифы</h2>
-        <div class="pricing">
-            <div class="price-card">
-                <h3>1 месяц</h3>
-                <div class="price">149<small>₽</small></div>
-                <p class="period">Подписка на 30 дней</p>
-                <a href="https://t.me/ArbizzVPNbot" class="btn" style="background: #667eea; color: white;">Купить</a>
-            </div>
-            <div class="price-card popular">
-                <h3>⭐️ 3 месяца</h3>
-                <div class="price">349<small>₽</small></div>
-                <p class="period">Подписка на 90 дней</p>
-                <a href="https://t.me/ArbizzVPNbot" class="btn" style="background: #667eea; color: white;">Купить</a>
-            </div>
-            <div class="price-card">
-                <h3>6 месяцев</h3>
-                <div class="price">599<small>₽</small></div>
-                <p class="period">Подписка на 180 дней</p>
-                <a href="https://t.me/ArbizzVPNbot" class="btn" style="background: #667eea; color: white;">Купить</a>
-            </div>
-            <div class="price-card">
-                <h3>1 год</h3>
-                <div class="price">999<small>₽</small></div>
-                <p class="period">Подписка на 365 дней</p>
-                <a href="https://t.me/ArbizzVPNbot" class="btn" style="background: #667eea; color: white;">Купить</a>
+            <div class="stat">
+                <span class="stat-num">10K+</span>
+                <span class="stat-label">Пользователей</span>
             </div>
         </div>
     </div>
+</section>
 
-    <footer>
-        <div class="links">
-            <a href="/about">О сервисе</a>
-            <a href="/terms">Соглашение</a>
-            <a href="/refund">Возврат</a>
-            <a href="/privacy">Конфиденциальность</a>
-            <a href="/contacts">Контакты</a>
+<!-- FEATURES -->
+<section class="features" id="features">
+    <div class="container">
+        <h2 class="section-title">Почему выбирают SafeNet VPN</h2>
+        <p class="section-sub">Мы предоставляем надёжный сервис для защиты вашей приватности в сети</p>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3>AES-256 шифрование</h3>
+                <p>Используем шифрование банковского уровня для защиты ваших данных от перехвата третьими лицами.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Высокая скорость</h3>
+                <p>Оптимизированные серверы обеспечивают минимальную задержку и максимальную скорость соединения.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌍</div>
+                <h3>50+ локаций</h3>
+                <p>Серверы расположены в более чем 50 странах мира. Выберите оптимальную точку подключения.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📵</div>
+                <h3>No-Log политика</h3>
+                <p>Мы не храним логи вашей активности. Ваша приватность — наш главный приоритет.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h3>Все устройства</h3>
+                <p>Поддержка Windows, macOS, iOS, Android и Linux. Одна подписка — до 5 устройств одновременно.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🛡️</div>
+                <h3>Kill Switch</h3>
+                <p>Автоматическое отключение интернета при разрыве VPN-соединения для предотвращения утечек.</p>
+            </div>
         </div>
-        <p>📱 Telegram-бот: <a href="https://t.me/ArbizzVPNbot">@ArbizzVPNbot</a></p>
-        <p>💬 Поддержка: <a href="https://t.me/Spprt05Arbz">@Spprt05Arbz</a></p>
-        <p class="copyright">© 2025 ArbizzVPN. Все права защищены.</p>
-    </footer>
+    </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+    <div class="container">
+        <h2 class="section-title">Тарифные планы</h2>
+        <p class="section-sub">Выберите подходящий план и начните пользоваться безопасным интернетом</p>
+        <div class="pricing-grid">
+            <div class="price-card">
+                <div class="price-name">Базовый</div>
+                <div class="price-amount">149 ₽<span>/мес</span></div>
+                <ul class="price-features">
+                    <li>✅ 1 устройство</li>
+                    <li>✅ 10 локаций</li>
+                    <li>✅ AES-256 шифрование</li>
+                    <li>✅ Безлимитный трафик</li>
+                    <li>❌ Kill Switch</li>
+                    <li>❌ Приоритетная поддержка</li>
+                </ul>
+                <a href="#" class="btn btn-outline">Подключить</a>
+            </div>
+            <div class="price-card popular">
+                <div class="popular-badge">Популярный</div>
+                <div class="price-name">Оптимальный</div>
+                <div class="price-amount">299 ₽<span>/мес</span></div>
+                <ul class="price-features">
+                    <li>✅ 3 устройства</li>
+                    <li>✅ 30 локаций</li>
+                    <li>✅ AES-256 шифрование</li>
+                    <li>✅ Безлимитный трафик</li>
+                    <li>✅ Kill Switch</li>
+                    <li>❌ Приоритетная поддержка</li>
+                </ul>
+                <a href="#" class="btn">Подключить</a>
+            </div>
+            <div class="price-card">
+                <div class="price-name">Премиум</div>
+                <div class="price-amount">499 ₽<span>/мес</span></div>
+                <ul class="price-features">
+                    <li>✅ 5 устройств</li>
+                    <li>✅ 50+ локаций</li>
+                    <li>✅ AES-256 шифрование</li>
+                    <li>✅ Безлимитный трафик</li>
+                    <li>✅ Kill Switch</li>
+                    <li>✅ Приоритетная поддержка 24/7</li>
+                </ul>
+                <a href="#" class="btn btn-outline">Подключить</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+    <div class="container">
+        <h2 class="section-title">Частые вопросы</h2>
+        <div class="faq-list">
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Как начать пользоваться SafeNet VPN?
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Выберите подходящий тарифный план, оплатите подписку, и вы получите на указанную электронную почту инструкцию по подключению и конфигурационные файлы для вашего устройства.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Какие протоколы поддерживаются?
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Мы поддерживаем протоколы WireGuard, OpenVPN (UDP/TCP), IKEv2/IPsec. Рекомендуем использовать WireGuard для максимальной скорости.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Можно ли вернуть деньги?
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Да, мы предоставляем гарантию возврата средств в течение 7 дней с момента оплаты, если услуга не была активирована или не соответствует заявленным характеристикам. Подробнее — в <a href="refund.html">Политике возврата</a>.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    Храните ли вы логи?
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Нет. Мы придерживаемся строгой политики No-Log. Мы не отслеживаем, не записываем и не храним данные о вашей активности в сети.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="logo footer-logo">
+                    <span class="logo-icon">🛡️</span> SafeNet VPN
+                </div>
+                <p class="footer-desc">Сервис для безопасного и анонимного доступа в интернет. Защита данных и приватности пользователей.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Документы</h4>
+                <ul>
+                    <li><a href="terms.html">Пользовательское соглашение</a></li>
+                    <li><a href="privacy.html">Политика конфиденциальности</a></li>
+                    <li><a href="refund.html">Политика возврата средств</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Контакты</h4>
+                <ul>
+                    <li>📧 <a href="mailto:arbizsupport@rambler.ru">arbizsupport@rambler.ru</a></li>
+                    <li>💬 Поддержка: ежедневно 10:00–22:00 (МСК)</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Оплата</h4>
+                <div class="payment-icons">
+                    <span class="payment-badge">💳 Visa</span>
+                    <span class="payment-badge">💳 MasterCard</span>
+                    <span class="payment-badge">💳 МИР</span>
+                    <span class="payment-badge">💳 СБП</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024–2025 SafeNet VPN. Все права защищены.</p>
+            <p>ИП Иванов И.И. | ИНН: 000000000000</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+function toggleFaq(el) {
+    const item = el.parentElement;
+    item.classList.toggle('active');
+}
+</script>
+
 </body>
-</html>"""
-        self.send_response(200)
-        self.send_header("Content-Type", "text/html; charset=utf-8")
-        self.end_headers()
-        self.wfile.write(html.encode())
+</html>
