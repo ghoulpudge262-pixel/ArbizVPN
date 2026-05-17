@@ -454,3 +454,214 @@ a:hover { color: #a0b8ff; }
     .price-card.popular:hover { transform: translateY(-4px); }
     .nav { display: none; }
 }
+/* ===== ABOUT PAGE ===== */
+.about-hero {
+    padding: 80px 0 60px;
+    text-align: center;
+    background: radial-gradient(ellipse at center top, rgba(74, 108, 247, 0.15), transparent 60%);
+}
+
+.about-hero h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.about-lead {
+    font-size: 1.15rem;
+    color: #8890a8;
+    max-width: 720px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+.about-section {
+    padding: 70px 0;
+}
+
+.about-section.alt-bg {
+    background: rgba(255, 255, 255, 0.01);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 0.6fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-grid.reverse {
+    grid-template-columns: 0.6fr 1fr;
+}
+
+.about-text h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    color: #a0a8c0;
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 16px;
+}
+
+.about-visual {
+    font-size: 8rem;
+    text-align: center;
+    background: linear-gradient(135deg, rgba(74, 108, 247, 0.1), rgba(108, 143, 255, 0.05));
+    border: 1px solid rgba(108, 143, 255, 0.15);
+    border-radius: 24px;
+    padding: 60px 40px;
+}
+
+/* STEPS */
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.step-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(108, 143, 255, 0.1);
+    border-radius: 16px;
+    padding: 28px 20px;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.step-card:hover {
+    border-color: rgba(108, 143, 255, 0.3);
+    transform: translateY(-4px);
+}
+
+.step-num {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 16px;
+    background: linear-gradient(135deg, #4a6cf7, #6c8fff);
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: 800;
+}
+
+.step-card h3 {
+    color: #ffffff;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.step-card p {
+    color: #8890a8;
+    font-size: 0.88rem;
+    line-height: 1.6;
+}
+
+/* STATS BIG */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.stat-box {
+    text-align: center;
+    padding: 32px 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(108, 143, 255, 0.1);
+    border-radius: 16px;
+}
+
+.stat-big {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #6c8fff;
+    margin-bottom: 8px;
+}
+
+.stat-label-big {
+    color: #a0a8c0;
+    font-size: 0.9rem;
+}
+
+/* TECH LIST */
+.tech-list {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.tech-list li {
+    padding: 12px 0 12px 28px;
+    color: #a0a8c0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    position: relative;
+    font-size: 0.94rem;
+}
+
+.tech-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #6c8fff;
+    font-weight: 700;
+}
+
+.tech-list li strong {
+    color: #ffffff;
+}
+
+/* CTA */
+.cta-section {
+    padding: 80px 0;
+}
+
+.cta-box {
+    background: linear-gradient(135deg, rgba(74, 108, 247, 0.15), rgba(108, 143, 255, 0.08));
+    border: 1px solid rgba(108, 143, 255, 0.25);
+    border-radius: 24px;
+    padding: 60px 40px;
+    text-align: center;
+}
+
+.cta-box h2 {
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.cta-box p {
+    color: #a0a8c0;
+    font-size: 1.05rem;
+    margin-bottom: 28px;
+}
+
+/* RESPONSIVE FOR ABOUT */
+@media (max-width: 768px) {
+    .about-hero h1 { font-size: 1.8rem; }
+    .about-grid,
+    .about-grid.reverse {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .about-visual {
+        font-size: 5rem;
+        padding: 40px 20px;
+    }
+    .steps-grid,
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .cta-box {
+        padding: 40px 20px;
+    }
+    .cta-box h2 { font-size: 1.5rem; }
+}
