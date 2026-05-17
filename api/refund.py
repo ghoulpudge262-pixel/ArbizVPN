@@ -1,83 +1,73 @@
-from http.server import BaseHTTPRequestHandler
-
-
-class handler(BaseHTTPRequestHandler):
-    def do_GET(self):
-        html = """<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Политика возврата — ArbizzVPN</title>
-    <style>
-        body { font-family: -apple-system, sans-serif; background: #0f172a; color: white; line-height: 1.8; margin: 0; padding: 40px 20px; }
-        .container { max-width: 800px; margin: 0 auto; }
-        h1 { font-size: 32px; margin-bottom: 20px; }
-        h2 { font-size: 22px; margin-top: 30px; margin-bottom: 10px; color: #667eea; }
-        p { margin-bottom: 15px; opacity: 0.9; }
-        ol, ul { margin-left: 25px; margin-bottom: 15px; }
-        li { margin-bottom: 8px; opacity: 0.9; }
-        .back { display: inline-block; margin-bottom: 20px; color: #667eea; text-decoration: none; }
-        a { color: #667eea; }
-        .date { opacity: 0.6; margin-bottom: 30px; }
-        .highlight { background: #1e293b; padding: 20px; border-radius: 10px; margin: 20px 0; border-left: 4px solid #667eea; }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Политика возврата средств — SafeNet VPN</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <a href="/" class="back">← Главная</a>
-        <h1>💰 Политика возврата средств</h1>
-        <p class="date">Дата обновления: 16 мая 2025 г.</p>
 
-        <div class="highlight">
-            <strong>Кратко:</strong> Возврат возможен в течение 24 часов после оплаты при условии, что услуга не использовалась.
-        </div>
-
-        <h2>1. Условия возврата</h2>
-        <p>1.1. Возврат денежных средств осуществляется в течение <strong>24 часов</strong> после оплаты подписки.</p>
-        <p>1.2. Для возврата подписка не должна быть использована (объём использованного трафика = 0 МБ).</p>
-        <p>1.3. После истечения 24 часов или начала использования услуги возврат не производится.</p>
-
-        <h2>2. Как запросить возврат</h2>
-        <ol>
-            <li>Напишите в поддержку: <a href="https://t.me/Spprt05Arbz">@Spprt05Arbz</a></li>
-            <li>Укажите ID платежа (можно посмотреть в Telegram-боте)</li>
-            <li>Укажите дату и время оплаты</li>
-            <li>Опишите причину возврата</li>
-            <li>Дождитесь рассмотрения заявки (до 24 часов)</li>
-        </ol>
-
-        <h2>3. Срок зачисления средств</h2>
-        <p>3.1. После одобрения заявки возврат производится в течение <strong>3-5 рабочих дней</strong>.</p>
-        <p>3.2. Возврат осуществляется тем же способом, что и оплата:</p>
-        <ul>
-            <li>Оплата картой → возврат на карту</li>
-            <li>Оплата через СБП → возврат на счёт</li>
-            <li>Оплата криптой → возврат на крипто-кошелёк</li>
-        </ul>
-
-        <h2>4. Случаи, когда возврат НЕ производится</h2>
-        <ul>
-            <li>Истёк срок 24 часа с момента оплаты</li>
-            <li>Услуга была использована (трафик более 0 МБ)</li>
-            <li>Нарушены правила сервиса (см. <a href="/terms">Соглашение</a>)</li>
-            <li>Подписка получена бесплатно (промокоды, бонусы)</li>
-        </ul>
-
-        <h2>5. Частичный возврат</h2>
-        <p>5.1. Если клиент использовал часть подписки и хочет вернуть остаток — возможен частичный возврат пропорционально неиспользованному времени.</p>
-        <p>5.2. Частичный возврат рассматривается индивидуально.</p>
-
-        <h2>6. Спорные ситуации</h2>
-        <p>6.1. Если возврат был отклонён, но клиент считает решение несправедливым — можно подать апелляцию через техподдержку.</p>
-        <p>6.2. Все спорные ситуации решаются в индивидуальном порядке через @Spprt05Arbz.</p>
-
-        <h2>7. Контакты для возврата</h2>
-        <p>💬 Поддержка: <a href="https://t.me/Spprt05Arbz">@Spprt05Arbz</a></p>
-        <p>📱 Telegram-бот: <a href="https://t.me/ArbizzVPNbot">@ArbizzVPNbot</a></p>
+<header class="header">
+    <div class="container header-inner">
+        <a href="index.html" class="logo"><span class="logo-icon">🛡️</span> SafeNet VPN</a>
+        <nav class="nav">
+            <a href="index.html">Главная</a>
+            <a href="contacts.html">Контакты</a>
+        </nav>
     </div>
+</header>
+
+<section class="legal-page">
+    <div class="container">
+        <h1>Политика возврата средств</h1>
+        <p class="legal-date">Дата последнего обновления: 01 января 2025 г.</p>
+
+        <h2>1. Общие условия возврата</h2>
+        <p>1.1. Мы стремимся к тому, чтобы каждый пользователь был доволен качеством предоставляемых услуг. Если по какой-либо причине вы не удовлетворены работой Сервиса, вы можете запросить возврат средств.</p>
+
+        <h2>2. Сроки возврата</h2>
+        <p>2.1. Возврат средств возможен в течение <strong>7 (семи) календарных дней</strong> с момента оплаты.</p>
+        <p>2.2. По истечении 7 дней возврат средств не осуществляется.</p>
+
+        <h2>3. Условия возврата</h2>
+        <p>3.1. Возврат осуществляется в следующих случаях:</p>
+        <ul>
+            <li>Услуга не была активирована по техническим причинам со стороны Сервиса;</li>
+            <li>Услуга не соответствует заявленным на сайте характеристикам;</li>
+            <li>Произошла двойная оплата (дублирование транзакции).</li>
+        </ul>
+        <p>3.2. Возврат <strong>не осуществляется</strong>, если:</p>
+        <ul>
+            <li>Пользователь нарушил условия Пользовательского соглашения;</li>
+            <li>Учётная запись была заблокирована за противоправные действия;</li>
+            <li>Прошло более 7 дней с момента оплаты;</li>
+            <li>Пользователь активно пользовался услугой (объём переданных данных превысил 1 ГБ).</li>
+        </ul>
+
+        <h2>4. Процедура возврата</h2>
+        <p>4.1. Для оформления возврата напишите на адрес <a href="mailto:arbizsupport@rambler.ru">arbizsupport@rambler.ru</a> с темой письма «Возврат средств».</p>
+        <p>4.2. В письме укажите:</p>
+        <ul>
+            <li>Email, указанный при оплате;</li>
+            <li>Дату и сумму платежа;</li>
+            <li>Причину возврата.</li>
+        </ul>
+        <p>4.3. Срок рассмотрения заявки — до 5 рабочих дней. Возврат производится тем же способом, которым была произведена оплата.</p>
+
+        <h2>5. Контактная информация</h2>
+        <p>Email поддержки: <a href="mailto:arbizsupport@rambler.ru">arbizsupport@rambler.ru</a></p>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-bottom">
+            <p>© 2024–2025 SafeNet VPN. Все права защищены.</p>
+        </div>
+    </div>
+</footer>
+
 </body>
-</html>"""
-        self.send_response(200)
-        self.send_header("Content-Type", "text/html; charset=utf-8")
-        self.end_headers()
-        self.wfile.write(html.encode())
+</html>
