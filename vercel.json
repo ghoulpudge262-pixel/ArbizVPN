@@ -1,11 +1,4 @@
 {
-  "rewrites": [
-    { "source": "/sub/:path*", "destination": "/api/sub" },
-    { "source": "/", "destination": "/api/index" },
-    { "source": "/about", "destination": "/api/about" },
-    { "source": "/terms", "destination": "/api/terms" },
-    { "source": "/refund", "destination": "/api/refund" },
-    { "source": "/privacy", "destination": "/api/privacy" },
-    { "source": "/contacts", "destination": "/api/contacts" }
-  ]
+  "cleanUrls": true,
+  "trailingSlash": false
 }
